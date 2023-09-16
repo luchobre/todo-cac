@@ -17,6 +17,7 @@ Download the Project:
 Go to the GitHub repository where the React Vite project is hosted.
 Click on the "Code" button and select "Download ZIP" to download the project as a ZIP file.
 Extract the contents of the ZIP file to your local folder.
+(Or "gh repo clone luchobre/todo-cac")
 Navigate to the Project Directory:
 Open your terminal/command prompt and navigate to the directory where you extracted the project files using the cd command:
 
