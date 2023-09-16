@@ -1,0 +1,79 @@
+* {
+    /* border: 2px solid white; */
+
+}
+button {
+    cursor: pointer;
+    background-color: lightgray;
+    border-radius: 5px;
+}
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 60px;
+}
+.block-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    margin: 5% 25%;
+}
+.todo-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.input-container input {
+    border-radius: 5px;
+    height: 40px;
+    width: 500px;
+    margin: 0 10px 0 0;
+}
+.input-container button {
+    height: 40px;
+    width: 40px;
+}
+.input-container button:hover {
+    background-color: rgb(103, 117, 177) ;
+    transition: 1s;
+}
+
+/* ******************************LIST CONTAINER ****************************** */
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.list-data {
+    display: flex;
+    border-radius: 5px;
+    border: 1px solid white;
+    justify-content: space-between;
+    padding: 5px;
+}
+.buttons-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttons-data button {
+    height: 40px;
+    width: 80px;
+    margin: 0 5px;
+}
+
+#edit:hover {
+    background-color: rgb(172, 172, 86) ;
+    transition: 1s;
+    /* color: black; */
+}
+#remove:hover {
+    background-color: rgb(172, 80, 80) ;
+    transition: 1s;
+    /* color: black; */
+}

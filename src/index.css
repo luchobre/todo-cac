@@ -3,9 +3,8 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-image: linear-gradient(to right, #6b9cd1, #5e8dc5, #517eb9, #456fad, #3961a1, #2f68a8, #206faf, #0076b5, #0094cb, #00b2d9, #00d0e0, #35ece1);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
