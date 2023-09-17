@@ -2,36 +2,48 @@ import { useState } from 'react'
 import '../assets/styles/toDo.css'
 
 const ToDo = () => {
-const [task, setTask] = useState()
+const [task, setTask] = useState('')
+const [list, setList] = useState([])
 
-const handleTask = (e) => {
-    setTask(e.target.value);
-    console.log(task)
+function addTask () {
+    setList([...list, task]);
+    setTask('')
 }
 
+function removeTask (index) {
+    const newList = [...list];
+    newList.splice(index, 1);
+    setList(newList)
+}
 
-
+function editTask (listItem) {
+    console.log(listItem)
+}
 
   return (
     <>
     <div className="block-container">
         <div className="todo-container">
             <h1>To Do List</h1>
-            <form onSubmit={handleTask}>
                 <div className='input-container'>
-                    <input type="text" value={task} />
-                    <button type='submit'>+</button>
+                    <input 
+                    type="text" 
+                    value={task} 
+                    onChange={(e) => setTask(e.target.value)}
+                    />
+                    <button onClick={addTask}>+</button>
                 </div>
-            </form>
             <ul className="list-container">
-                <li className='list-data'>
-                    <input type="checkbox" name="" id="" />
-                    <p>{task}</p>
-                    <div className="buttons-data">
-                        <button id='edit'>Edit</button>
-                        <button id='remove'>Remove</button>
+                {list.map((listItem, index) => (
+                    <li key={index} className='list-data'>
+                        <input type="checkbox" name="" id="" />
+                        <p>{listItem}</p>
+                        <div className="buttons-data">
+                        <button id='edit' onClick={()=> editTask(listItem)}>Edit</button>
+                        <button id='remove' onClick={() => removeTask(index)}>Remove</button>
                     </div>
-                </li>
+                    </li>
+                ))}
             </ul>
         </div>
     </div>
