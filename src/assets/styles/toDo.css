@@ -26,6 +26,12 @@ h1 {
     flex-direction: column;
     align-items: center;
 }
+.todo-container h1 {
+    margin: 0 20% 0 0;
+}
+.input-container {
+    margin-right: 20%;
+}
 .input-container input {
     border-radius: 5px;
     height: 40px;
@@ -47,14 +53,17 @@ h1 {
     display: flex;
     flex-direction: column;
     width: 80%;
+    margin: 15% 20% 0 0;
 }
 
 .list-data {
     display: flex;
     border-radius: 5px;
-    border: 1px solid white;
+    border: 1px solid black;
     justify-content: space-between;
     padding: 5px;
+    color: black;
+    margin-bottom: 5px;
 }
 .buttons-data {
     display: flex;

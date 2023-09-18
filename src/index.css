@@ -4,7 +4,9 @@
   font-weight: 400;
 
   color: rgba(255, 255, 255, 0.87);
-  background-image: linear-gradient(to right, #6b9cd1, #5e8dc5, #517eb9, #456fad, #3961a1, #2f68a8, #206faf, #0076b5, #0094cb, #00b2d9, #00d0e0, #35ece1);
+  background-image: url(./assets/images/bloc-notas-lapiz-sobre-fondo-tablero-madera.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

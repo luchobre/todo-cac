@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import '../assets/styles/toDo.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFileCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
 const ToDo = () => {
 const [task, setTask] = useState('')
@@ -16,8 +18,9 @@ function removeTask (index) {
     setList(newList)
 }
 
-function editTask (listItem) {
-    console.log(listItem)
+function editTask (listItem, index) {
+    setTask(listItem)
+    list.splice(index, 1)    
 }
 
   return (
@@ -31,7 +34,7 @@ function editTask (listItem) {
                     value={task} 
                     onChange={(e) => setTask(e.target.value)}
                     />
-                    <button onClick={addTask}>+</button>
+                    <FontAwesomeIcon icon={faFileCirclePlus} style={{color: "#ffffff",}} onClick={addTask} /> 
                 </div>
             <ul className="list-container">
                 {list.map((listItem, index) => (
@@ -39,7 +42,7 @@ function editTask (listItem) {
                         <input type="checkbox" name="" id="" />
                         <p>{listItem}</p>
                         <div className="buttons-data">
-                        <button id='edit' onClick={()=> editTask(listItem)}>Edit</button>
+                        <button id='edit' onClick={()=> editTask(listItem, index)}>Edit</button>
                         <button id='remove' onClick={() => removeTask(index)}>Remove</button>
                     </div>
                     </li>
