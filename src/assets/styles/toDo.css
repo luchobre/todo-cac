@@ -35,16 +35,15 @@ h1 {
 .input-container input {
     border-radius: 5px;
     height: 40px;
-    width: 500px;
+    width: 30vw;
     margin: 0 10px 0 0;
 }
-.input-container button {
-    height: 40px;
-    width: 40px;
+#add {
+    transition: transform 0.3s ease;
 }
-.input-container button:hover {
-    background-color: rgb(103, 117, 177) ;
-    transition: 1s;
+#add:hover {
+    transform: scale(1.2);
+    cursor: pointer;
 }
 
 /* ******************************LIST CONTAINER ****************************** */
@@ -65,24 +64,25 @@ h1 {
     color: black;
     margin-bottom: 5px;
 }
+.list-data p {
+    font-family: 'Courgette', cursive;
+    font-size: 20px;
+}
 .buttons-data {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 20px;
 }
-.buttons-data button {
-    height: 40px;
-    width: 80px;
-    margin: 0 5px;
+#remove, #edit {
+    margin: 0 10px;
+    transition: transform 0.3s ease;
 }
-
 #edit:hover {
-    background-color: rgb(172, 172, 86) ;
-    transition: 1s;
-    /* color: black; */
+    cursor: pointer;
+    transform: scale(1.2);
 }
 #remove:hover {
-    background-color: rgb(172, 80, 80) ;
-    transition: 1s;
-    /* color: black; */
+    cursor: pointer;
+    transform: scale(1.2);
 }
