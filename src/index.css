@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Roboto, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -7,10 +7,17 @@
   background-image: url(./assets/images/bloc-notas-lapiz-sobre-fondo-tablero-madera.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-
+  background-attachment: fixed;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+@media (max-width:905px) {
+  :root {
+    background-position: center;  
+  }
+} */
+

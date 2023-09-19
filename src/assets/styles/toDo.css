@@ -1,88 +1,181 @@
-* {
-    /* border: 2px solid white; */
-
+:root {
+  /* border: 2px solid white; */
+  background-image: url(../images/bloc-notas-lapiz-sobre-fondo-tablero-madera.jpg);
+  background-size: cover;
 }
 button {
-    cursor: pointer;
-    background-color: lightgray;
-    border-radius: 5px;
+  cursor: pointer;
+  background-color: lightgray;
+  border-radius: 5px;
 }
 h1 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 60px;
+  font-family: "Oswald", sans-serif;
+  font-size: 60px;
+  color: white;
 }
 .block-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    margin: 5% 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .todo-container {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.todo-container h1 {
-    margin: 0 20% 0 0;
-}
-.input-container {
-    margin-right: 20%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .input-container input {
-    border-radius: 5px;
-    height: 40px;
-    width: 30vw;
-    margin: 0 10px 0 0;
+  border-radius: 5px;
+  height: 40px;
+  width: 30vw;
+  margin: 0 10px 0 0;
 }
 #add {
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 #add:hover {
-    transform: scale(1.2);
-    cursor: pointer;
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 /* ******************************LIST CONTAINER ****************************** */
 
 .list-container {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin: 15% 20% 0 0;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 10% 0 0 0;
 }
 
 .list-data {
-    display: flex;
-    border-radius: 5px;
-    border: 1px solid black;
-    justify-content: space-between;
-    padding: 5px;
-    color: black;
-    margin-bottom: 5px;
+  display: flex;
+  border-radius: 5px;
+  border: 1px solid black;
+  justify-content: space-between;
+  padding: 5px;
+  color: black;
+  margin-bottom: 5px;
 }
 .list-data p {
-    font-family: 'Courgette', cursive;
-    font-size: 20px;
+  font-family: "Courgette", cursive;
+  font-size: 20px;
+  word-wrap: break-word;
+  max-width: 80%;
 }
 .buttons-data {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
 }
-#remove, #edit {
-    margin: 0 10px;
-    transition: transform 0.3s ease;
+#remove,
+#edit {
+  margin: 0 10px;
+  transition: transform 0.3s ease;
 }
 #edit:hover {
-    cursor: pointer;
-    transform: scale(1.2);
+  cursor: pointer;
+  transform: scale(1.2);
 }
 #remove:hover {
-    cursor: pointer;
-    transform: scale(1.2);
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+/* *********************MEDIA QUERIES *********************/
+
+/* @media (max-width:1280px) {
+    h1 {
+        display: none;
+    }
+}
+
+@media (max-width:905px) {
+    .input-container {
+        margin-right: 0%;
+    }
+    .input-container input {
+        width: 70vw;
+        margin: 0;
+        padding: 0;
+    }
+    #add {
+        margin-left: 40%;
+    }
+    .list-container {
+        width: 100%;
+    }
+}
+ */
+
+/* *********************CHECKBOX *********************/
+
+.mycheckbox {
+  display: flex;
+  align-items: center;
+}
+.mycheckbox input:checked ~ span::after {
+  background: rgb(12, 167, 12);
+  transform: scale(0.85) translate(35px);
+}
+.mycheckbox input:checked ~ span .on {
+  transform: translate(30px);
+  opacity: 1;
+}
+
+.mycheckbox input:checked ~ span .off {
+  transform: translate(30px);
+  opacity: 0;
+}
+
+.mycheckbox input:checked ~ span .on-bell {
+  transform: translate(31px);
+}
+
+.mycheckbox input {
+  display: none;
+}
+
+.mycheckbox span {
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  border-radius: 30px;
+  background: rgb(187, 186, 186);
+  cursor: pointer;
+  box-shadow: inset 0px 0px 2px rgb(15, 15, 15);
+  position: relative;
+}
+
+.mycheckbox span::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  transform: scale(0.85);
+  border-radius: 30px;
+  background: rgb(248, 22, 22);
+  transition: 0.5s;
+  box-shadow: inset 0px 0px 2px rgb(37, 37, 37);
+}
+
+.mycheckbox i {
+  position: absolute;
+  left: 7px;
+  top: 7px;
+  z-index: 1;
+  color: white;
+  transition: 0.5s;
+}
+
+.mycheckbox .on {
+  opacity: 0;
+  left: 7px;
+  top: 7px;
+}
+
+.mycheckbox .off {
+  left: 9px;
+  top: 7px;
 }

@@ -2,18 +2,23 @@ import { useState } from "react";
 import "../assets/styles/toDo.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faCheck,
   faFileCirclePlus,
   faPenToSquare,
   faTrash,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
+import TaskList from "./TaskList";
 
 const ToDo = () => {
   const [task, setTask] = useState("");
   const [list, setList] = useState([]);
 
   function addTask() {
-    setList([...list, task]);
-    setTask("");
+    if (task.trim() != "") {
+      setList([...list, task]);
+      setTask("");
+    }
   }
 
   function removeTask(index) {
@@ -46,30 +51,7 @@ const ToDo = () => {
               onClick={addTask}
             />
           </div>
-          <ul className="list-container">
-            {list.map((listItem, index) => (
-              <li key={index} className="list-data">
-                <input type="checkbox" name="" id="" />
-                <p>{listItem.charAt(0).toUpperCase() + listItem.slice(1).toLowerCase()}</p>
-                <div className="buttons-data">
-                  <FontAwesomeIcon
-                    icon={faPenToSquare}
-                    size="2xl"
-                    style={{ color: "#ffffff" }}
-                    id="edit"
-                    onClick={() => editTask(listItem, index)}
-                  />
-                  <FontAwesomeIcon
-                    icon={faTrash}
-                    size="2xl"
-                    style={{ color: "#c91f13" }}
-                    id="remove"
-                    onClick={() => removeTask(index)}
-                  />
-                </div>
-              </li>
-            ))}
-          </ul>
+          <TaskList tasks={list} onEdit={editTask} onRemove={removeTask} />
         </div>
       </div>
     </>
